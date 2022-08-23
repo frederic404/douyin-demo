@@ -1,0 +1,25 @@
+DBDefaults: &defaults
+  Timeout: "5s"
+  ReadTimeout: "5s"
+  WriteTimeout: "5s"
+  DBHostname: "localhost"
+  MaxIdleConns: 10
+  MaxOpenConns: 200
+  DBCharset: "utf8mb4"
+  DriverName: "mysql"
+  User: ""
+  Password: ""
+  DBName: "douyin_demo"
+
+TiktokDspData_R:
+  <<: *defaults
+  DBHostname: "localhost"
+  User: "douyin_demo_read"
+  Password: "ATaleOf2C"
+
+
+TiktokDspData_W:
+  <<: *defaults
+  DBHostname: "localhost"
+  User: "douyin_demo_write"
+  Password: "ATaleOf2C"
