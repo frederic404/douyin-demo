@@ -18,6 +18,7 @@ func InitDataSources() {
 		panic(err)
 	} else {
 		UserReader = &mysqlUserReader{db_r}
+		log.Infoln("get connected to douyin_demo_read")
 
 	}
 
@@ -28,6 +29,7 @@ func InitDataSources() {
 		panic(err)
 	} else {
 		UserWriter = &mysqlUserWriter{db_w}
+		log.Infoln("get connected to douyin_demo_write")
 
 	}
 

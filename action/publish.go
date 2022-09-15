@@ -12,7 +12,7 @@ func PublishList(c *gin.Context) {
 	token := c.DefaultQuery("token", "")
 	userID := c.DefaultQuery("user_id", "")
 	if VerifyToken(token, userID) {
-		resp, err := domain.PublishList()
+		// resp, err := domain.PublishList()
 	}
 
 }

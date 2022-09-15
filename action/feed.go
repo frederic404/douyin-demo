@@ -7,7 +7,7 @@ import (
 
 	"github.com/bytedance/douyin-demo/api/protoc_gen"
 	"github.com/bytedance/douyin-demo/pkg/constant"
-	"github.com/bytedance/douyin-demo/service/domain/feed"
+	"github.com/bytedance/douyin-demo/service/domain"
 	"github.com/gin-gonic/gin"
 )
 
@@ -21,7 +21,7 @@ func Feed(c *gin.Context) {
 		LatestTime: &latestTime,
 		Token:      nil,
 	}
-	resp, err := feed.Feed(c, req)
+	resp, err := domain.Feed(c, req)
 	if err != nil || (resp != nil && resp.StatusCode != nil && *resp.StatusCode != constant.SUCCESS) {
 		c.JSON(http.StatusBadRequest, resp)
 		return
